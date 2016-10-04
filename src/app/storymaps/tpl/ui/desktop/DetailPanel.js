@@ -356,8 +356,10 @@ define(["../../core/Helper",
 			this.refreshSlides = function()
 			{
 				_slidesRefreshing = true;
-				if(!app.data.getWebAppData().getGeneralOptions().filterByExtent  && !app.isInBuilder)
+				if(!app.data.getWebAppData().getGeneralOptions().filterByExtent  && !app.isInBuilder) {
+					_slidesRefreshing = false;
 					return;
+				}
 				var themeIndex = $('.entry.active').index();
 				if(themeIndex<0)
 					themeIndex = 0;
